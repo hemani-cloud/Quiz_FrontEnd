@@ -8,7 +8,7 @@ function Quiz() {
   const [result, setResult] = useState(null);
 
   useEffect(() => {
-    axios.get("http://127.0.0.1:8000/api/questions/")
+    axios.get("https://quiz-backend.onrender.com/api/questions/")
       .then(res => setQuestions(res.data));
   }, []);
 
@@ -25,7 +25,7 @@ function Quiz() {
       if (val) score++;
     });
 
-    axios.post("http://127.0.0.1:8000/api/submit-result/", {
+    axios.post("https://quiz-backend.onrender.com/api/submit-result/", {
       username: username,
       score: score,
       total_questions: questions.length
